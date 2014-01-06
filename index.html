@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+	max-width: 48rem;
+	margin: 2rem 10% 1rem;
+	font-family: sans-serif;
+}
+
+</style>
+</head>
+<body>
+<h1>Bacon.js demo</h1>
+
+<div class="input">
+<label>Enter a word... <input class="word-input" type="text"></label>
+</div>
+
+<div class="all-results">
+
+	<div class="results">
+		<h2>Cat result</h2>
+		<p class="cat-result-text">No result yet...</p>
+	</div>
+
+	<div class="dog results">
+		<h2>Dog result</h2>
+		<p class="d0g-result-text">No result yet...</p>
+	</div>
+</div>
+
+<script src="js/jquery-2.0.3.js"></script>
+<script src="js/Bacon.js"></script>
+
+<script>
+var userInput = Bacon.fromEventTarget(document.querySelector(".word-input"),"keyup");
+
+userInput.onValue(function(event, args) {
+	console.log($(event.originalTarget).val())
+});
+</script>
+</body>
+</html>
